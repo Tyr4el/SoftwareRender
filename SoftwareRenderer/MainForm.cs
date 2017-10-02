@@ -20,6 +20,10 @@ namespace SoftwareRenderer
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			var bitmap = new Bitmap(renderFrame.Width, renderFrame.Height);
+
+			var graphics = new GraphicsPipeline();
+			graphics.RasterizeTriangle(new Vector2 { x = 25, y = 35 }, new Vector2 { x = 45, y = 20 }, new Vector2 { x = 55, y = 35 }, bitmap);
+
 			renderFrame.Image = bitmap;
 		}
 	}

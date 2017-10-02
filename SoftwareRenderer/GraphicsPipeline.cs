@@ -19,7 +19,14 @@ namespace SoftwareRenderer
 			{
 				for (p.x = min.x; p.x <= max.x; p.x += 1)
 				{
+					var w0 = OrientEdge(a, b, p);
+					var w1 = OrientEdge(b, c, p);
+					var w2 = OrientEdge(c, a, p);
 
+					if (w0 >= 0 && w1 >= 0 && w2 >= 0)
+					{
+						targetImage.SetPixel((int)p.x, (int)p.y, Color.Red);
+					}
 				}
 			}
 		}
